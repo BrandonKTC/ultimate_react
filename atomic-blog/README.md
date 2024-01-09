@@ -10,3 +10,8 @@
 - whenever there is an update in a context value all consumer component are re-render
 
 <img src="./img.png" alt="img" />
+
+# When to use memo, useMemo and useCallback
+
+<img src='./img1.png' alt="img" />
+<img src='./img2.png' alt="img" />
