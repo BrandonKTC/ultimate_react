@@ -12,7 +12,7 @@
 
 - [] Build many custom hooks, reusable in your future projects
 
-- [] Build single-page applications with React Router (including v6.4+ with data loading)
+- [x] Build single-page applications with React Router (including v6.4+ with data loading)
 
 - [] Performance optimization with memo, useMemo, useCallback, and code splitting
 
