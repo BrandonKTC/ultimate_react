@@ -297,8 +297,8 @@ console.log(bookAfterUpdate);
 
 console.log(fetch("https://jsonplaceholder.typicode.com/todos")); // Promise { <pending> }
 
-fetch("https://jsonplaceholder.typicode.com/todos") // Promise { <pending> }
-  .then((res) => res.json()) // Promise { <pending> }
+fetch("https://jsonplaceholder.typicode.com/todos") // Promise { <pending> } // transforming data into javascript object
+  .then((res) => res.json()) // Promise { <pending> } // return javascript object
   .then((data) => console.log(data)); // data fetch
 
 async function getTodos() {
