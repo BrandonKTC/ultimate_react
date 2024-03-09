@@ -41,36 +41,42 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h2>Ready to order? Let&apos;s go!</h2>
+    <div className="px-4 py-6">
+      <h2 className="text-xl font-semibold mb-8">
+        Ready to order? Let&apos;s go!
+      </h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
-          <input type="text" name="customer" className="input" required />
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm-items-center">
+          <label className="sm:basis-40">First Name</label>
+          <input type="text" name="customer" className="input grow" required />
         </div>
 
-        <div>
-          <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" className="input" required />
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm-items-center">
+          <label className="sm:basis-40">Phone number</label>
+          <div className="grow">
+            <input type="tel" name="phone" className="input w-full" required />
+            {formErrors?.phone && (
+              <p className="mt-2 text-xs text-red-700 bg-red-100 rounded-md">
+                {formErrors.phone}
+              </p>
+            )}
           </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
+        <div className="mb-5 flex gap-2 flex-col sm:flex-row sm-items-center">
+          <label className="sm:basis-40">Address</label>
+          <div className="grow">
             <input
               type="text"
               name="address"
-              className="rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus:ring focus:ring-yellow-500 w-full md:px-6 md:py-3"
+              className="input w-full"
               required
             />
           </div>
         </div>
 
-        <div>
+        <div className="mb-12 flex items-center gap-5">
           <input
             className="h-6 w-6 accent-yellow-40 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2 "
             type="checkbox"
@@ -84,7 +90,7 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <Button disabled={isSubmitting}>
+          <Button disabled={isSubmitting} type="primary">
             {isSubmitting ? "Placing Order..." : "Order now"}
           </Button>
         </div>
